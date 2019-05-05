@@ -1,0 +1,31 @@
+.jumbotron{ text-align: center;
+    background-color: thistle;
+    margin-top: 150px;
+    
+
+}
+
+body{
+    background-image: url("outerspace.jpg");
+
+
+
+}
+
+.GameText{
+    background-color: rgb(117, 161, 161);
+    margin: 10 450;
+    text-align: center;
+    color:white;
+    width:300px;
+    opacity: .7;
+}
+
+.display-4{ 
+    font-family: 'Monoton', cursive;
+
+}
+
+p{
+    font-family: 'Noto Sans KR', sans-serif;
+}
