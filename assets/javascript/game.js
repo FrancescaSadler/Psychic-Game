@@ -5,6 +5,7 @@ var wins = 0;
 var losses = 0;
 var guessesLeft = 9;
 var yourGuesses = [];
+var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
 //checking to make sure javascript it linked to text html 
 console.log("linked")
@@ -22,7 +23,7 @@ document.onkeyup = function (event) {
     yourGuesses.push(userGuess)
     console.log(userGuess)
     // records computer guess 
-    var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
 
 
 
@@ -30,28 +31,31 @@ document.onkeyup = function (event) {
         wins++;
         guessesLeft = 9;
         yourGuesses = [];
+        computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
     }
 
-    if (userGuess != computerGuess) {
-        yourGuesses.push(userGuess)
-        //how do I push number of guesses down?
-        // guessesLeft = guessesLeft -1;
-        guessesLeft --;
+    else if (guessesLeft > 1) {
+        guessesLeft--;
+
     }
+
+
+    
+
+    else {
+        losses++;
+        guessesLeft = 9;
+        yourGuesses = [];
+        computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+    }
+
 
 
     winsText.textContent = wins;
     lossesText.textContent = losses;
     guessesLeftText.textContent = guessesLeft;
     yourGuessesText.textContent = yourGuesses;
-
-    if (guessesLeft === 0) {
-        losses++;
-        yourGuesses = [];
-
-    }
-
-
-
 }
 
